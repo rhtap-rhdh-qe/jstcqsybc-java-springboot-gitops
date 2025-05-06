@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  rhtap/gitops: jstcqsybc-java-springboot 
+  janus-idp.io/tekton: jstcqsybc-java-springboot
+  backstage.io/kubernetes-id: jstcqsybc-java-springboot
+  backstage.io/kubernetes-namespace: rhtap-app 
+  app.kubernetes.io/part-of: jstcqsybc-java-springboot
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml
